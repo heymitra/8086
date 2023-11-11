@@ -1,37 +1,36 @@
 # Instructions
 
-1. [Data Transfer Instructions](#Data Transfer Instructions)
-	 - MOV
+- [Data Transfer Instructions](#data-transfer-instructions)
+	 - [MOV](#mov)
 
-2. [Arithmetic Instructions](#Arithmetic Instructions)
+- [Arithmetic Instructions](#arithmetic-instructions)
     - ADD
     - SUB
     - MUL
     - DIV
 
-3. [Logical Instructions](#Logical Instructions)
+- [Logical Instructions](#logical-instructions)
     - AND
     - OR
     - XOR
     - NOT
 
-4. [Control Transfer Instructions](#Control Transfer Instructions)
+- [Control Transfer Instructions](#control-transfer-instructions)
     - JMP
     - JZ
     - JE
 
-5. [Comparison Instructions](#Comparison Instructions)
+- [Comparison Instructions](#comparison-instructions)
     - CMP
 
-
-6. [Stack Instructions](#Stack Instructions)
+- [Stack Instructions](#stack-instructions)
     - PUSH
     - POP
 
 
-# <a name ="Data Transfer Instructions"></a>Data Transfer Instructions
+# <a name ="data-transfer-instructions"></a>Data Transfer Instructions
 
-## <a name="MOV"></a>MOV
+## <a name="mov"></a>MOV
 
 **MOV (Move):**
 
@@ -75,7 +74,7 @@ MOV [1234], AL ; Copy the contents of register AL to the memory location with ad
 MOV DS, AX    ; Copy the contents of register AX to the Data Segment (DS) register
 ```
 
-# <a name ="Arithmetic Instructions"></a>Arithmetic Instructions
+# <a name ="arithmetic-instructions"></a>Arithmetic Instructions
 
 <a name ="ADD"></a>**ADD (Addition):**
 ```assembly
@@ -97,7 +96,7 @@ MUL BX      ; AX = AX * BX (unsigned multiplication)
 DIV BX      ; AX = AX / BX (unsigned division)
 ```
 
-# <a name ="Logical Instructions"></a> Logical Instructions
+# <a name ="logical-instructions"></a> Logical Instructions
 
 **AND (Bitwise AND):**
 ```assembly
@@ -119,7 +118,7 @@ XOR AX, BX  ; AX = AX XOR BX
 NOT AX      ; AX = NOT AX
 ```
 
-# <a name ="Control Transfer Instructions"></a>Control Transfer Instructions
+# <a name ="control-transfer-instructions"></a>Control Transfer Instructions
 
 **JMP (Jump):**
 ```assembly
@@ -136,14 +135,14 @@ JZ Label    ; Jump to Label if the Zero flag is set
 JE Label    ; Jump to Label if the Equal flag is set
 ```
 
-# <a name = "Comparison Instructions"></a> Comparison Instructions
+# <a name = "comparison-instructions"></a> Comparison Instructions
 
 **CMP (Compare):**
 ```assembly
 CMP AX, BX  ; Compare AX and BX (affects flags but does not store the result)
 ```
 
-# <a name = "Stack Instructions"></a>Stack Instructions
+# <a name = "stack-instructions"></a>Stack Instructions
 
 **PUSH (Push onto Stack):**
 ```assembly
