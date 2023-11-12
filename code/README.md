@@ -1,8 +1,8 @@
 # Instructions
 
-**1. [Data Transfer Instructions](#Data Transfer Instructions):**  [MOV](#MOV)
+**1. [Data Transfer Instructions](#data_transfer-instructions):**  [MOV](#MOV)
 
-**2. [Arithmetic Instructions](#Arithmetic Instructions):** [ADD](#add), [SUB](#sub), [MUL](#mul), [DIV](#div)
+**2. [Arithmetic Instructions](#arithmetic_instructions):** [ADD](#add), [SUB](#sub), [MUL](#mul), [DIV](#div)
 
 **3. [Logical Instructions](#logical-instructions):** [AND](#and), [OR](#or), [XOR](#xor), [NOT](#not)
 
