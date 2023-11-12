@@ -1,31 +1,16 @@
 # Instructions
 
-- [Data Transfer Instructions](#data-transfer-instructions)
-	 - [MOV](#mov)
+**1. [Data Transfer Instructions](#Data Transfer Instructions):**  [MOV](#MOV)
 
-- [Arithmetic Instructions](#arithmetic-instructions)
-    - ADD
-    - SUB
-    - MUL
-    - DIV
+**2. [Arithmetic Instructions](#Arithmetic Instructions):** [ADD](#add), [SUB](#sub), [MUL](#mul), [DIV](#div)
 
-- [Logical Instructions](#logical-instructions)
-    - AND
-    - OR
-    - XOR
-    - NOT
+**3. [Logical Instructions](#logical-instructions):** [AND](#and), [OR](#or), [XOR](#xor), [NOT](#not)
 
-- [Control Transfer Instructions](#control-transfer-instructions)
-    - JMP
-    - JZ
-    - JE
+**4. [Control Transfer Instructions](#control-transfer-instructions):** [JMP](#jmp), [JZ](#jz), [JE](#je), JNZ, JNE, ...
 
-- [Comparison Instructions](#comparison-instructions)
-    - CMP
+**5. [Comparison Instructions](#comparison-instructions):** [CMP](#cmp)
 
-- [Stack Instructions](#stack-instructions)
-    - PUSH
-    - POP
+**6. [Stack Instructions](#stack-instructions):** [PUSH](#push), [POP](#pop)
 
 
 # <a name ="data-transfer-instructions"></a>Data Transfer Instructions
@@ -76,80 +61,80 @@ MOV DS, AX    ; Copy the contents of register AX to the Data Segment (DS) regist
 
 # <a name ="arithmetic-instructions"></a>Arithmetic Instructions
 
-<a name ="ADD"></a>**ADD (Addition):**
+<a name ="add"></a>**ADD (Addition):**
 ```assembly
 ADD AX, BX  ; AX = AX + BX
 ```
 
-**SUB (Subtraction):**
+<a name ="sub"></a>**SUB (Subtraction):**
 ```assembly
 SUB AX, BX  ; AX = AX - BX
 ```
 
-**MUL (Multiply):**
+<a name ="mul"></a>**MUL (Multiply):**
 ```assembly
 MUL BX      ; AX = AX * BX (unsigned multiplication)
 ```
 
-**DIV (Divide):**
+<a name ="div"></a>**DIV (Divide):**
 ```assembly
 DIV BX      ; AX = AX / BX (unsigned division)
 ```
 
 # <a name ="logical-instructions"></a> Logical Instructions
 
-**AND (Bitwise AND):**
+<a name ="and"></a>**AND (Bitwise AND):**
 ```assembly
 AND AX, BX  ; AX = AX AND BX
 ```
 
-**OR (Bitwise OR):**
+<a name ="or"></a>**OR (Bitwise OR):**
 ```assembly
 OR AX, BX   ; AX = AX OR BX
 ```
 
-**XOR (Bitwise XOR):**
+<a name ="xor"></a>**XOR (Bitwise XOR):**
 ```assembly
 XOR AX, BX  ; AX = AX XOR BX
 ```
 
-**NOT (Bitwise NOT):**
+<a name ="not"></a>**NOT (Bitwise NOT):**
 ```assembly
 NOT AX      ; AX = NOT AX
 ```
 
 # <a name ="control-transfer-instructions"></a>Control Transfer Instructions
 
-**JMP (Jump):**
+<a name ="jmp"></a>**JMP (Jump):**
 ```assembly
 JMP Label   ; Unconditional jump to Label
 ```
 
-**JZ (Jump if Zero):**
+<a name ="jz"></a>**JZ (Jump if Zero):**
 ```assembly
 JZ Label    ; Jump to Label if the Zero flag is set
 ```
 
-**JE (Jump if Equal):**
+<a name ="je"></a>**JE (Jump if Equal):**
 ```assembly
 JE Label    ; Jump to Label if the Equal flag is set
 ```
 
 # <a name = "comparison-instructions"></a> Comparison Instructions
 
-**CMP (Compare):**
+<a name ="cmp"></a>**CMP (Compare):**
 ```assembly
 CMP AX, BX  ; Compare AX and BX (affects flags but does not store the result)
 ```
 
 # <a name = "stack-instructions"></a>Stack Instructions
 
-**PUSH (Push onto Stack):**
+<a name ="push"></a>**PUSH (Push onto Stack):**
 ```assembly
 PUSH AX     ; Push the contents of AX onto the stack
 ```
 
-**POP (Pop from Stack):**
+<a name ="pop"></a>**POP (Pop from Stack):**
 ```assembly
 POP BX      ; Pop the top of the stack into BX
 ```
