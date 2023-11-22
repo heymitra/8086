@@ -1,6 +1,6 @@
 # Instructions
 
-**1. [Data Transfer Instructions](#data_transfer-instructions):**  [MOV](#MOV)
+**1. [Data Transfer Instructions](#data_transfer-instructions):**  [MOV](#MOV), [LEA](#lea)
 
 **2. [Arithmetic Instructions](#arithmetic_instructions):** [ADD](#add), [SUB](#sub), [MUL](#mul), [DIV](#div)
 
@@ -58,6 +58,56 @@ MOV [1234], AL ; Copy the contents of register AL to the memory location with ad
 ```assembly
 MOV DS, AX    ; Copy the contents of register AX to the Data Segment (DS) register
 ```
+
+## <a name="lea"></a>LEA
+
+**LEA (Load Effective Address):**
+- Its primary purpose is to calculate an effective memory address and load it into a register without actually accessing the memory.
+- It calculates the effective address specified by the source operand and loads it into the destination operand, typically a register.
+- The `LEA` instruction is primarily designed for use with 16-bit addresses.
+
+```assembly
+LEA destination, source
+```
+- **Destination Operand:** It must be a 16-bit general-purpose register. Common choices include AX, BX, CX, DX, SI, DI, BP, or SP.
+- **Source Operand:** It can be a memory operand or a register operand. The source operand can involve various addressing modes, allowing for flexibility in address calculations.
+Here are some examples:
+
+```assembly
+LEA AX, [BX + SI] ; Calculate the effective address [BX + SI] and load it into AX 
+LEA SI, [BX + 2] ; Calculate the effective address [BX + 2] and load it into SI 
+LEA DI, [1234] ; Load the immediate value 1234 into DI (DI is used as a destination for a constant) 
+LEA DX, [SI + DI + 4] ; Calculate the effective address [SI + DI + 4] and load it into DX
+```
+In these examples, the destination operand is always a 16-bit general-purpose register, and the source operand involves effective address computations using different addressing modes.
+
+<blockquote style="background-color: #3498db; color: #ffffff; padding: 10px; border-radius: 5px; margin: 0;">
+    <p><strong>LEA VS OFFSET</strong></p>
+    <pre><code>LEA BX, VARB
+MOV BX, OFFSET VARB</code></pre>
+    <p>While these two code snippets have the same functionality, `OFFSET` cannot always serve as an alternative for `LEA`:</p>
+    <pre><code>LEA BX, ARR[SI]
+MOV BX, OFFSET ARR[SI]</code></pre>
+    <p>In this scenario, <code>MOV BX, OFFSET ARR[SI]</code> doesn't provide the same functionality. Instead, to achieve the equivalent result, use:</p>
+    <pre><code>MOV BX, OFFSET ARR 
+ADD BX, SI</code></pre>
+    <p><strong>Key Differences:</strong></p>
+    <ul>
+        <li><strong>Calculation Approach:</strong>
+            <ul>
+                <li><code>LEA</code> directly calculates the effective address in a single instruction.</li>
+                <li><code>MOV BX, OFFSET ARR; ADD BX, SI</code> involves two instructions: one to load the static offset and another to perform dynamic indexing.</li>
+            </ul>
+        </li>
+        <li><strong>Dynamic vs. Static:</strong>
+            <ul>
+                <li><code>LEA</code> performs a dynamic calculation based on the content of <code>SI</code> at runtime.</li>
+                <li><code>MOV BX, OFFSET ARR</code> is a static operation during assembly time, and <code>ADD BX, SI</code> introduces a dynamic component.</li>
+            </ul>
+        </li>
+    </ul>
+</blockquote>
+
 
 # <a name ="arithmetic-instructions"></a>Arithmetic Instructions
 
